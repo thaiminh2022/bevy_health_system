@@ -3,6 +3,7 @@ name = "bevy_health_system"
 description = "A quick and easy way to add a health system to any entity of your bevy game"
 version = "0.0.1"
 repository = "https://github.com/thaiminh2022/bevy_health_system"
+documentation =""
 readme = "README.md"
 edition = "2021"
 license = "MIT"
@@ -12,3 +13,6 @@ categories = ["bevy", "game"]
 
 [dependencies]
 bevy = "0.10.1"
+
+[badges]
+maintenance=  {status="actively-developed" }
