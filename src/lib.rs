@@ -12,6 +12,7 @@
 //!     commands.spawn((Player{}, HealthSystem::new(100.0)))
 //! }
 //! ```
+//! # Useful links
 //!
 //! # License
 //! MIT
@@ -25,10 +26,14 @@ pub mod health_system {
     ///
     /// # Examples
     /// ```no_run
+    /// use bevy::prelude::*;
+    /// use bevy_health_system::HealthSystem;
     /// //Spawn it using bevy commands
-    /// commands.spawn((Player {}, HealthSystem::new(100.0)));
+    /// fn set_up(mut commands: Commands) {
+    ///     commands.spawn(HealthSystem::new(100.0));
+    /// }
     /// //Query it like any other component
-    /// fn get_player_health_system(query:Query<&HealthSystem, With<Player>>) {todo!();}
+    /// fn get_player_health_system(query:Query<&HealthSystem>) {todo!();}
     ///
     ///```
     #[derive(Debug, Component)]
@@ -42,11 +47,6 @@ pub mod health_system {
         /// Create a new health system
         /// # Arguments
         /// * `max_health`: The max health of the health system, __health cannot exceed this value__
-        ///
-        /// # Example
-        /// ```no_run
-        /// commands.spawn(HealthSystem::new(100.0));
-        /// ```
         pub fn new(max_health: f32) -> Self {
             return Self {
                 health: max_health,
@@ -77,7 +77,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let health_system = query.get_single_mut().unwrap();
         ///     assert_eq!(100.0, health_system.get_health());
         /// }
@@ -92,7 +92,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.deal_damage(10.0);
         ///     assert_eq!(false, health_system.is_dead());
@@ -112,7 +112,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.deal_damage(10.0);
         ///     assert_eq!(0.9, health_system.get_health_normalized());
@@ -131,7 +131,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.deal_damage(10.0);
         ///     assert_eq!(90.0, health_system.get_health());
@@ -149,7 +149,7 @@ pub mod health_system {
         /// use bevy::prelude::*;
         /// use bevy_health_system::HealthSystem;
         ///
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.kill_system();
         ///     assert_eq!(true, health_system.is_dead());
@@ -170,7 +170,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.deal_damage(10.0);
         ///     assert_eq!(90.0, health_system.get_health());
@@ -194,10 +194,10 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.deal_damage(50.0);
-        ///     assert_eq!(50, health_system.get_health());
+        ///     assert_eq!(50.0, health_system.get_health());
         ///
         ///     health_system.heal_full();
         ///     assert_eq!(100.0, health_system.get_health());
@@ -217,7 +217,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.set_health(10.0);
         ///     assert_eq!(10.0, health_system.get_health());
@@ -253,7 +253,7 @@ pub mod health_system {
         /// use bevy_health_system::HealthSystem;
         ///
         /// // Assuming health system was initialized with 100 health
-        /// fn get_health_system(mut query: Query<&HealthSystem>) {
+        /// fn get_health_system(mut query: Query<&mut HealthSystem>) {
         ///     let mut health_system = query.get_single_mut().unwrap();
         ///     health_system.set_health_max(200.0, false);
         ///     assert_eq!(100.0, health_system.get_health());
