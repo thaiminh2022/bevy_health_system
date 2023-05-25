@@ -7,7 +7,7 @@ readme = "README.md"
 edition = "2021"
 license = "MIT"
 keywords = ["gamedev", "bevy", "heath_system"]
-categories = ["bevy", "game"]
+categories = ["games", "game-engines"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
