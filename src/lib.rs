@@ -15,8 +15,9 @@
 //! # Useful links
 //!
 //! ## Websites
-//! - Github repo: https://github.com/thaiminh2022/bevy_health_system.
-//! - Crates.io: https://crates.io/crates/bevy_health_system.
+//! - __Github repo__: https://github.com/thaiminh2022/bevy_health_system.
+//! - __Crates.io__: https://crates.io/crates/bevy_health_system.
+//! - __Docs.rs__: <https://docs.rs/bevy_health_system/0.0.1/bevy_health_system>
 //!
 //! ## Structs
 //! 1. [HealthSystem]
