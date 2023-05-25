@@ -1,20 +1,34 @@
 # Bevy Health System
 
+## __Table of contents__
+
+- [What is bevy health system](#what-is-bevy_health_system)
+- [Design Goals](#design-goals)
+- [Useful Links](#useful-links)
+- [Quick Start](#quick-start)
+  - [No Bevy](#no-bevy)
+  - [Explanation](#explanation)
+- [How to remove bevy](#how-to-remove-bevy)
+- [Examples](#examples)
+- [LICENSE](#license)
+
+## __What is bevy_health_system__
+
 An easy way to add a health system to your bevy's entity. </br>
 __NOTICE__: This package is not entirely depend on bevy, the only "bevy thing" this package use is the Component struct. This is describe in: [NO BEVY](#no-bevy) section.
 
-# Design Goals
+## __Design Goals__
 
 - __Simple__: Easy to pick up, flexible and easy to extend.
 - __Capable__: Any idea of health system can implement this system.
 
-# Useful Links
+## __Useful Links__
 
-- __Docrs__: <https://docs.rs/bevy_health_system/0.0.1/bevy_health_system>
-- __Github__: <https://github.com/thaiminh2022/bevy_health_system>
-- __Crates__: <https://crates.io/crates/bevy_health_system>
+- __Documentation - Docrs__: <https://docs.rs/bevy_health_system/0.0.1/bevy_health_system>
+- __Download - Crates__: <https://crates.io/crates/bevy_health_system>
+- __Repository - Github__: <https://github.com/thaiminh2022/bevy_health_system>
 
-# Quick Start
+## __Quick Start__
 
 1. Import the `HealthSystem` struct.
 2. Add `HealthSystem` struct just like any component for your entity.
@@ -28,9 +42,9 @@ fn spawn_player(mut commands: Commands) {
 }
 ```
 
-# No Bevy
+## __No Bevy__
 
-## Explaination
+### Explanation
 
 This package is not entirely depend on bevy, the only "bevy thing" this package use is the Component struct.
 
@@ -38,7 +52,7 @@ This package is not entirely depend on bevy, the only "bevy thing" this package 
 use bevy::prelude::Component;
 ```
 
-## How to remove bevy
+### How to remove bevy
 
 If you want to use this package independently with bevy, here's what to do.
 
@@ -46,6 +60,10 @@ If you want to use this package independently with bevy, here's what to do.
 2. Copy HealthSystem struct and its implementation to your rust code.
 3. Remove the Component trait.
 
-# LICENSE
+## __Examples__
+
+There will be examples when the package reach 1.0.0
+
+## __LICENSE__
 
 MIT
