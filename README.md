@@ -24,7 +24,7 @@ __NOTICE__: This package is not entirely depend on bevy, the only "bevy thing" t
 
 ## __Useful Links__
 
-- __Documentation - Docrs__: <https://docs.rs/bevy_health_system/0.0.1/bevy_health_system>
+- __Documentation - Docrs__: <https://docs.rs/bevy_health_system/latest/bevy_health_system/>
 - __Download - Crates__: <https://crates.io/crates/bevy_health_system>
 - __Repository - Github__: <https://github.com/thaiminh2022/bevy_health_system>
 
