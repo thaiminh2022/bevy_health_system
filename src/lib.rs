@@ -102,12 +102,12 @@ pub mod health_system {
                 }
             };
 
-            return Self {
+            Self {
                 health: max_health,
                 max_health,
                 system_state: health_system_state,
                 system_modifier: HealthSystemModifier::NONE,
-            };
+            }
         }
 
         /// Returns the current health of the system.
@@ -123,7 +123,7 @@ pub mod health_system {
         /// }
         /// ```
         pub fn get_health(&self) -> f32 {
-            return self.health;
+            self.health
         }
         /// Returns the current max health of the system.
         /// # Example
@@ -138,7 +138,7 @@ pub mod health_system {
         /// }
         /// ```
         pub fn get_health_max(&self) -> f32 {
-            return self.max_health;
+            self.max_health
         }
         /// Returns true if the system is dead, else false
         /// # Example
@@ -157,7 +157,7 @@ pub mod health_system {
         /// }
         /// `````
         pub fn is_dead(&self) -> bool {
-            return self.system_state == HealthSystemState::DEAD;
+            self.system_state == HealthSystemState::DEAD
         }
         /// Returns the normalized health of the system.
         /// this means: `health/max_health`
@@ -174,7 +174,7 @@ pub mod health_system {
         /// }
         /// ```
         pub fn get_health_normalized(&self) -> f32 {
-            return self.health / self.max_health;
+            self.health / self.max_health
         }
 
         /// Deal damage to the system.
@@ -194,10 +194,9 @@ pub mod health_system {
         /// }
         /// ```
         pub fn deal_damage(&mut self, amount: f32, force: bool) {
-            if self.current_modifier_is(HealthSystemModifier::INVINCIBLE) && force == false {
+            if self.current_modifier_is(HealthSystemModifier::INVINCIBLE) && !force {
                 return;
             }
-
             self.health -= amount;
             self.check_is_dead();
         }
@@ -217,10 +216,9 @@ pub mod health_system {
         /// }
         /// ```
         pub fn kill_system(&mut self, force: bool) {
-            if self.current_modifier_is(HealthSystemModifier::INVINCIBLE) && force == false {
+            if self.current_modifier_is(HealthSystemModifier::INVINCIBLE) && !force {
                 return;
             }
-
             self.health = 0.0;
             self.system_state = HealthSystemState::DEAD;
         }
@@ -261,7 +259,7 @@ pub mod health_system {
                 }
             }
 
-            return overflow_amount;
+            overflow_amount
         }
         /// - Heal the system.
         /// - Returns the amount of health that overflowed after heal.
@@ -287,7 +285,7 @@ pub mod health_system {
             let overflow_value = self.max_health - amount;
             self.health += amount;
 
-            return overflow_value;
+            overflow_value
         }
 
         /// Heal the system fully.
@@ -343,7 +341,7 @@ pub mod health_system {
             self.health = final_value;
 
             // overflow
-            return self.max_health - value;
+            self.max_health - value
         }
 
         /// Set the max health of the system
@@ -414,7 +412,7 @@ pub mod health_system {
         /// }
         ///```
         pub fn get_modifier(&self) -> HealthSystemModifier {
-            return self.system_modifier;
+            self.system_modifier
         }
 
         /// Returns whenever the current modifier is the specified modifier.
@@ -432,14 +430,13 @@ pub mod health_system {
         /// }
         ///```
         pub fn current_modifier_is(&self, modifier: HealthSystemModifier) -> bool {
-            return self.get_modifier() == modifier;
+            self.get_modifier() == modifier
         }
 
         fn change_modifier(&mut self, modifier: HealthSystemModifier) {
             if self.is_dead() {
                 return;
             }
-
             self.system_modifier = modifier;
         }
         fn check_is_dead(&mut self) {
