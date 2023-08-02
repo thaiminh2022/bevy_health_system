@@ -15,9 +15,9 @@
 //! # Useful links
 //!
 //! ## Websites
-//! - __Download - Crates__: https://crates.io/crates/bevy_health_system
-//! - __Repository - Github__: https://github.com/thaiminh2022/bevy_health_system
-//! - __Documentation - Docrs__: https://docs.rs/bevy_health_system/latest/bevy_health_system/
+//! - __Download - Crates__: <https://crates.io/crates/bevy_health_system>
+//! - __Repository - Github__: <https://github.com/thaiminh2022/bevy_health_system>
+//! - __Documentation - Docrs__: <https://docs.rs/bevy_health_system/latest/bevy_health_system>
 //!
 //! ## Structs
 //! 1. [HealthSystem]
