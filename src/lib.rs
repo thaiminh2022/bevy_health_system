@@ -48,7 +48,7 @@ pub mod health_system {
         /// __Default__.
         #[default]
         NONE,
-        /// The entity having this system can't take any damage unless it was force.
+        /// The entity having this system can't take any damage unless it was forced.
         INVINCIBLE,
     }
 
