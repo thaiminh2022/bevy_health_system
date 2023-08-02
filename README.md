@@ -1,5 +1,12 @@
 # Bevy Health System
 
+## __Version Tracker__ 
+
+| Bevy | bevy_health_system |
+| ------------- | ------------- |
+| 0.11          | 0.2.0         |
+| 0.10          | 0.1.1         |
+
 ## __Table of contents__
 
 - [What is bevy health system](#what-is-bevy_health_system)
@@ -15,7 +22,7 @@
 ## __What is bevy_health_system__
 
 An easy way to add a health system to your bevy's entity. </br>
-__NOTICE__: This package is not entirely depend on bevy, the only "bevy thing" this package use is the Component struct. This is describe in: [NO BEVY](#no-bevy) section.
+__NOTICE__: This package is not entirely depend on bevy, the only "bevy thing" this package use is the Component struct. This is described in: [NO BEVY](#no-bevy) section.
 
 ## __Design Goals__
 
@@ -52,7 +59,7 @@ This package is not entirely depend on bevy, the only "bevy thing" this package 
 use bevy::prelude::Component;
 ```
 
-### How to remove bevy
+### How to remove Bevy
 
 If you want to use this package independently with bevy, here's what to do.
 
@@ -62,7 +69,7 @@ If you want to use this package independently with bevy, here's what to do.
 
 ## __Examples__
 
-There will be examples when the package reach 1.0.0
+I'm too lazy to add examples, check the docs. Should be easy to implement to your projects.
 
 ## __LICENSE__
 
